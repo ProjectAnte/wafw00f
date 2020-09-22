@@ -454,7 +454,7 @@ def main():
     if options.output:
         if options.output == '-':
             enableStdOut()
-            print(os.linesep.join(getTextResults(results)))
+            print(json.dumps(results))
         elif options.output.endswith('.json'):
             log.debug("Exporting data in json format to file: %s" % (options.output))
             with open(options.output, 'w') as outfile:
